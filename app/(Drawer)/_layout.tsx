@@ -1,12 +1,12 @@
-// app/_layout.js
 import { Drawer } from 'expo-router/drawer';
 import CustomDrawerContent from '@/components/shared/CustomDrawerContent'; // Importa tu componente personalizado
-import { View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import { AuthContext } from '@/context/authContexto';
 
 
 export default function Layout() {
   return (
+
     <Drawer
       drawerContent={CustomDrawerContent} // Personaliza el contenido del Drawer
       screenOptions={{
@@ -32,20 +32,6 @@ export default function Layout() {
           )
         }}
       />
-      {/* Define las pantallas dentro del Drawer */}
-      {/* <Drawer.Screen
-        name="Home/index" // Nombre de la ruta
-        options={{
-          headerShown: false,
-          drawerLabel: 'Home se', // Texto en el Drawer
-          title: 'Dashboard ss', // Título en el encabezado
-
-          drawerIcon:({color,size})=> (
-            <Ionicons name="add" size={size} color={color} />
-            
-          )
-        }} */}
-      {/* /> */}
       <Drawer.Screen
         name="ajustes/index" // Nombre de la ruta
         options={{
@@ -58,5 +44,6 @@ export default function Layout() {
         }}
       />
     </Drawer>
+
   );
 }
